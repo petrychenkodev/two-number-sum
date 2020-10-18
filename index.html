@@ -26,7 +26,21 @@
         }
     }
 
-    console.log(find(arr, 10));
+    find(arr, 10);
+
+    function findTwo(arr, target) {
+        let objNumb = {};
+        for (let i = 0; i < arr.length; i++) {
+            let sought = target - (arr[i]);
+            if (objNumb[sought]) {
+                return [arr[i], sought]
+            }
+            objNumb[arr[i]] = true;
+        }
+        return []
+    }
+    let arr = [1, 2, 4, -5, 12, -1, 11];
+    findTwo(arr, 10)
 </script>
 
 </html>
